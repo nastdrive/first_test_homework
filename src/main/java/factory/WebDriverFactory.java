@@ -1,5 +1,6 @@
 package factory;
 
+import exception.BrowserNotSupportedExpection;
 import factory.settings.ChromeSettings;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,6 +32,6 @@ public class WebDriverFactory {
                 return new ChromeDriver(options);
             }
         }
-        throw new RuntimeException(browserName);
+        throw new BrowserNotSupportedExpection(browserName);
     }
 }
